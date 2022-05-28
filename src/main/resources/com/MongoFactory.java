@@ -1,4 +1,4 @@
-package com.mongo.factory;
+package com;
 
 import org.apache.log4j.logger;
 

@@ -1,4 +1,4 @@
-package com.mongo;
+package com;
 
 public class Person {
 	
