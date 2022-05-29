@@ -1,7 +1,7 @@
-package com;
+package com.Services;
 
 import java.util.*;
-import com.MongoFactory;
+import com.Models.MongoFactory;
 
 import org.apache.log4j.Logger;
 
