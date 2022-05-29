@@ -18,14 +18,14 @@ import com.mongodb.DBObject;
 @Transactional
 public class PersonService {
 	
-	private static String db_name = "Cecncus";
+	private static String db_name = "Cencus";
 	private static String collection_name = "CRUD-Operation-Spring-MVC";
 	
 	private static Logger log = Logger.getLogger(PersonService.class);
 	
 	public List<Person> getAll(){
 		
-		List<Person> = new ArrayList<>();
+		List<Person> user_list = new ArrayList<>();
 		DBCollection coll = MongoFactory.getCollection(db_name,collection_name);
 		DBCursor cursor = coll.find(); 
 		
