@@ -27,8 +27,8 @@ public class PersonController {
     public String getPersons(Model model) {
         log.debug("Request to fetch all users from the mongo database");
         List<Person> person_list = personService.getAll();      
-        model.addAttribute("users", person_list);     
-        return "welcome";
+        model.addAttribute("person", person_list);     
+        return "Welcome";
     }
 	
 }
