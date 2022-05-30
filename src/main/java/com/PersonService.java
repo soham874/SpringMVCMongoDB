@@ -4,8 +4,6 @@ import java.util.*;
 
 import org.bson.Document;
 
-//import org.apache.log4j.Logger;
-
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -23,8 +21,6 @@ public class PersonService {
 	
 	private static String db_name = "Cencus";
 	private static String collection_name = "CRUD-Operation-Spring-MVC";
-	
-	//private static Logger log = Logger.getLogger(PersonService.class);
 	
 	public List<Person> getAll(){
 		
@@ -44,12 +40,11 @@ public class PersonService {
             person.setLocation(dbObject.get("Location").toString());
             person.setAge(Integer.parseInt(dbObject.get("Age").toString()));
             
-            System.out.println("Person found -> "+person.toString());
             // Adding the user details to the list.
             person_list.add(person);
         }
         cursor.close();
-        //log.debug("Total records fetched from the mongo database are= " + person_list.size());
+        System.out.println(person_list.size()+" documents found and loaded from collection.");
         return person_list;
 	}
 	
