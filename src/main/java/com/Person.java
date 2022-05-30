@@ -2,11 +2,11 @@ package com;
 
 public class Person {
 	
-	private static final int id;
-	private static final int Age;
-	private static final string Gender;
-	private static final string Location;
-	private static final string Name;
+	private int id;
+	private int Age;
+	private String Gender;
+	private String Location;
+	private String Name;
 	
 	public int getId() {
 		return this.id;
@@ -24,27 +24,27 @@ public class Person {
 		this.Age = Age;
 	}
 	
-	public string getGender() {
+	public String getGender() {
 		return this.Gender;
 	}
 	
-	public void setGender(string Gender) {
+	public void setGender(String Gender) {
 		this.Gender = Gender;
 	}
 	
-	public string getLocation() {
+	public String getLocation() {
 		return this.Location;
 	}
 	
-	public void setLocation(string Location) {
+	public void setLocation(String Location) {
 		this.Location = Location;
 	}
 	
-	public string getName() {
+	public String getName() {
 		return this.Name;
 	}
 	
-	public void setName(string Name) {
+	public void setName(String Name) {
 		this.Name = Name;
 	}
 	

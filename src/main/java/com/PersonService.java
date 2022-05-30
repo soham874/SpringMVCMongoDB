@@ -1,7 +1,6 @@
-package com.Services;
+package com;
 
 import java.util.*;
-import com.Models.MongoFactory;
 
 import org.apache.log4j.Logger;
 
@@ -9,8 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.mongodb.DBCollection;
-import com.mongodb.BasicDBObject;
-import com.mongodb.DBCollection;
+//import com.mongodb.BasicDBObject;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 
@@ -25,7 +23,7 @@ public class PersonService {
 	
 	public List<Person> getAll(){
 		
-		List<Person> user_list = new ArrayList<>();
+		List<Person> person_list = new ArrayList<Person>();
 		DBCollection coll = MongoFactory.getCollection(db_name,collection_name);
 		DBCursor cursor = coll.find(); 
 		
@@ -33,17 +31,17 @@ public class PersonService {
             DBObject dbObject = cursor.next();
  
             Person person = new Person();
-            person.setId(dbObject.get("id").toString());
+            person.setId(Integer.parseInt(dbObject.get("id").toString()));
             person.setName(dbObject.get("Name").toString());
             person.setGender(dbObject.get("Gender").toString());
             person.setLocation(dbObject.get("Location").toString());
-            person.setAge(Integer.parseInt(dbObject.get("Age")));
+            person.setAge(Integer.parseInt(dbObject.get("Age").toString()));
  
             // Adding the user details to the list.
-            user_list.add(user);
+            person_list.add(person);
         }
-        log.debug("Total records fetched from the mongo database are= " + user_list.size());
-        return user_list;
+        log.debug("Total records fetched from the mongo database are= " + person_list.size());
+        return person_list;
 	}
 	
 }

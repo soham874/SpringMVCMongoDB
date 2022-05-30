@@ -1,6 +1,6 @@
-package com.Models;
+package com;
 
-import org.apache.log4j.logger;
+//import org.apache.log4j.logger;
 
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
@@ -8,10 +8,10 @@ import com.mongodb.Mongo;
 import com.mongodb.MongoException;
 
 
-@SuppressWarnings("depracation")
+@SuppressWarnings("deprecation")
 public class MongoFactory {
 	
-	private static Logger log = Logger.getLogger(MongoFactory.class);
+	//private static Logger log = Logger.getLogger(MongoFactory.class);
 	 
     private static Mongo mongo;
  
@@ -25,7 +25,8 @@ public class MongoFactory {
             try {
                 mongo = new Mongo(hostname, port_no);                                                                       
             } catch (MongoException ex) {
-                log.error(ex);
+                //log.error(ex);
+                System.out.println(ex.toString());
             }
         }
         return mongo;
