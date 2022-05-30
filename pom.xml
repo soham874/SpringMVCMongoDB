@@ -44,7 +44,18 @@
             <artifactId>mongo-java-driver</artifactId>
             <version>3.5.0</version>
         </dependency>
-        <!-- log4j -->
+        <!-- okhttp3 -->
+        <dependency>
+		    <groupId>com.squareup.okhttp3</groupId>
+		    <artifactId>okhttp</artifactId>
+		    <version>4.2.2</version>
+		</dependency>
+		<!-- JSON Object -->
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20090211</version>
+		</dependency>
   </dependencies>
   <build>
     <finalName>SpringMVCMongoDB</finalName>

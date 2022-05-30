@@ -1,4 +1,4 @@
-package com;
+package com.service;
 
 import java.util.*;
 
@@ -7,6 +7,8 @@ import org.bson.Document;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.config.MongoFactory;
+import com.model.Person;
 //import com.mongodb.DBCollection;
 //import com.mongodb.BasicDBObject;
 //import com.mongodb.DBCursor;
