@@ -2,7 +2,7 @@ package com;
 
 import java.util.*;
 
-import org.apache.log4j.Logger;
+//import org.apache.log4j.Logger;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -19,7 +19,7 @@ public class PersonService {
 	private static String db_name = "Cencus";
 	private static String collection_name = "CRUD-Operation-Spring-MVC";
 	
-	private static Logger log = Logger.getLogger(PersonService.class);
+	//private static Logger log = Logger.getLogger(PersonService.class);
 	
 	public List<Person> getAll(){
 		
@@ -36,11 +36,12 @@ public class PersonService {
             person.setGender(dbObject.get("Gender").toString());
             person.setLocation(dbObject.get("Location").toString());
             person.setAge(Integer.parseInt(dbObject.get("Age").toString()));
- 
+            
+            System.out.println("Person found -> "+person.toString());
             // Adding the user details to the list.
             person_list.add(person);
         }
-        log.debug("Total records fetched from the mongo database are= " + person_list.size());
+        //log.debug("Total records fetched from the mongo database are= " + person_list.size());
         return person_list;
 	}
 	

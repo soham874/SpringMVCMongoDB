@@ -3,10 +3,10 @@ package com;
 public class Person {
 	
 	private int id;
-	private int Age;
-	private String Gender;
-	private String Location;
-	private String Name;
+	private int age;
+	private String gender;
+	private String location;
+	private String name;
 	
 	public int getId() {
 		return this.id;
@@ -17,39 +17,39 @@ public class Person {
 	}
 	
 	public int getAge() {
-		return this.Age;
+		return this.age;
 	}
 	
-	public void setAge(int Age) {
-		this.Age = Age;
+	public void setAge(int age) {
+		this.age = age;
 	}
 	
 	public String getGender() {
-		return this.Gender;
+		return this.gender;
 	}
 	
-	public void setGender(String Gender) {
-		this.Gender = Gender;
+	public void setGender(String gender) {
+		this.gender = gender;
 	}
 	
 	public String getLocation() {
-		return this.Location;
+		return this.location;
 	}
 	
 	public void setLocation(String Location) {
-		this.Location = Location;
+		this.location = Location;
 	}
 	
 	public String getName() {
-		return this.Name;
+		return this.name;
 	}
 	
 	public void setName(String Name) {
-		this.Name = Name;
+		this.name = Name;
 	}
 	
 	@Override
 	public String toString() {
-		return "ID : "+id+"|| Name : "+Name+"|| Age : "+Age+"|| Location : "+Location+"|| Gender : "+Gender;
+		return "ID : "+id+"|| Name : "+name+"|| Age : "+age+"|| Location : "+location+"|| Gender : "+gender;
 	}
 }
