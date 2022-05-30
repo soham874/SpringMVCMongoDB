@@ -2,15 +2,20 @@ package com;
 
 import java.util.*;
 
+import org.bson.Document;
+
 //import org.apache.log4j.Logger;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.mongodb.DBCollection;
+//import com.mongodb.DBCollection;
 //import com.mongodb.BasicDBObject;
-import com.mongodb.DBCursor;
-import com.mongodb.DBObject;
+//import com.mongodb.DBCursor;
+//import com.mongodb.DBObject;
+import com.mongodb.client.FindIterable;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoCursor;
 
 @Service("personService")
 @Transactional
@@ -24,11 +29,13 @@ public class PersonService {
 	public List<Person> getAll(){
 		
 		List<Person> person_list = new ArrayList<Person>();
-		DBCollection coll = MongoFactory.getCollection(db_name,collection_name);
-		DBCursor cursor = coll.find(); 
+		MongoCollection<Document> coll = MongoFactory.getCollection(db_name,collection_name);
+		FindIterable<Document> fi = coll.find();
+        MongoCursor<Document> cursor = fi.iterator();
 		
-        while(cursor.hasNext()) {           
-            DBObject dbObject = cursor.next();
+        while(cursor.hasNext()) {   
+        	
+            Document dbObject = cursor.next();
  
             Person person = new Person();
             person.setId(Integer.parseInt(dbObject.get("id").toString()));
@@ -41,6 +48,7 @@ public class PersonService {
             // Adding the user details to the list.
             person_list.add(person);
         }
+        cursor.close();
         //log.debug("Total records fetched from the mongo database are= " + person_list.size());
         return person_list;
 	}
