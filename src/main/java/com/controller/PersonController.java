@@ -27,7 +27,7 @@ public class PersonController {
 	
 	// Displaying the initial users list.
     @RequestMapping(value = "/")
-    public String basicLanding(Model model) {     
+    public String welcome(Model model) throws IOException, JSONException {     
         return "Welcome";
     }
 	
