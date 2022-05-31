@@ -34,8 +34,7 @@ public class PersonController {
     // Displaying the initial users list.
     @RequestMapping(value = "/viewPerson")
     public String viewPerson(Model model) throws IOException, JSONException {
-    	MongoServices.testPost();
-        List<Person> person_list = personService.getAll(); 
+        List<Person> person_list = MongoServices.testPost();
         model.addAttribute("person", person_list);     
         return "Welcome";
     }

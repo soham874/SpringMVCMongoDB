@@ -1,6 +1,8 @@
 package com.service;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -23,7 +25,7 @@ public class MongoServices {
         	+ "\n}";
       }
 	
-	public static void testPost() throws IOException, JSONException{
+	public static List<Person> testPost() throws IOException, JSONException{
 		OkHttpClient client = new OkHttpClient().newBuilder().build();
 		RequestBody body = RequestBody.create(JsonValue(),JSON);
         Request request = new Request.Builder()
@@ -39,7 +41,7 @@ public class MongoServices {
         String jsonData = response.body().string();
         JSONObject Jobject = new JSONObject(jsonData);
         JSONArray Jarray = Jobject.getJSONArray("documents");
-
+        List<Person> person_list = new ArrayList<Person>();
         for (int i = 0; i < Jarray.length(); i++) {
             JSONObject object = Jarray.getJSONObject(i);
             Person temp_person = new Person();
@@ -49,9 +51,10 @@ public class MongoServices {
             temp_person.setGender(object.getString("Gender"));
             temp_person.setLocation(object.getString("Location"));
             temp_person.setName(object.getString("Name"));
-            
+            person_list.add(temp_person);
             System.out.println(temp_person.toString());
         }
         response.close();
+        return person_list;
 	}
 }
