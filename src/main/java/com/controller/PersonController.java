@@ -24,7 +24,13 @@ public class PersonController {
 		
 	@Autowired
 	PersonService personService;
- 
+	
+	// Displaying the initial users list.
+    @RequestMapping(value = "/")
+    public String basicLanding(Model model) {     
+        return "Welcome";
+    }
+	
     // Displaying the initial users list.
     @RequestMapping(value = "/viewPerson")
     public String viewPerson(Model model) throws IOException, JSONException {
