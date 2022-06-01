@@ -1,31 +1,35 @@
 package com.service;
 
+import com.model.Person;
 import java.util.*;
 
-import org.bson.Document;
+
+//import org.bson.Document;
 
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
+//import org.springframework.transaction.annotation.Transactional;
 
-import com.config.MongoFactory;
-import com.model.Person;
+//import com.config.MongoFactory;
+
+
+
 //import com.mongodb.DBCollection;
 //import com.mongodb.BasicDBObject;
 //import com.mongodb.DBCursor;
 //import com.mongodb.DBObject;
-import com.mongodb.client.FindIterable;
-import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoCursor;
+//import com.mongodb.client.FindIterable;
+//import com.mongodb.client.MongoCollection;
+//import com.mongodb.client.MongoCursor;
 
 @Service("personService")
-@Transactional
+//@Transactional
 public class PersonService {
 	
 	private static String db_name = "Cencus";
 	private static String collection_name = "CRUD-Operation-Spring-MVC";
 	
 	public List<Person> getAll(){
-		
+		/*
 		List<Person> person_list = new ArrayList<Person>();
 		MongoCollection<Document> coll = MongoFactory.getCollection(db_name,collection_name);
 		FindIterable<Document> fi = coll.find();
@@ -47,7 +51,9 @@ public class PersonService {
         }
         cursor.close();
         System.out.println(person_list.size()+" documents found and loaded from collection.");
-        return person_list;
+        return person_list;*/
+		return null;
 	}
 	
 }
+

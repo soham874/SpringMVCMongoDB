@@ -1,5 +1,5 @@
 package com.config;
-
+/*
 import org.bson.Document;
 
 //import com.mongodb.DB;
@@ -41,4 +41,4 @@ public class MongoFactory {
     public static MongoCollection<Document> getCollection(String db_name, String db_collection) {
         return getDB(db_name).getCollection(db_collection);
     }
-}
+}*/
